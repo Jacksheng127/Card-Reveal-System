@@ -1,0 +1,119 @@
+.card{
+    position: relative;
+}
+
+.card img{
+    width: 100%;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 6px;
+}
+
+.card .front{
+    transform: rotateY(90deg);
+    position: absolute;
+    transition-delay: 0.2s;
+    
+}
+
+.flipped .front{
+    transform: rotateY(0deg);
+    transition-delay: 0.2s;
+}
+
+.card .back{
+    transition: all ease-in 0.2s;
+    transition-delay: 0.2s;
+}
+
+.flipped .back{
+    transform: rotateY(90deg);
+    transition-delay: 0s;
+}
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+
+
+.card {
+  width: 200px; 
+  height: 200px; 
+  perspective: 1000px; /* Define perspective for 3D effect */
+  transition: transform 0.5s, z-index 1.5s; /* Define transition for transform and z-index */
+}
+
+.card.flipped {
+  transform: scale(1.5); /* Flip the card and zoom in */
+  z-index: 999;
+}
+
+.card.zoomed {
+  transform: scale(1.5); /* Zoom in the card */
+}
+
+.flipper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.front {
+  z-index: 2;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.text-overlay {
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.number {
+    font-size: 35px;
+    margin: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card.flipped, .card.zoomed {
+  transform: scale(1.5); /* Apply zoom */
+  z-index: 999; /* Bring to front */
+}
+
+.uniqueNumber {
+  position: absolute;
+  z-index: 4; /* Ensure it's above all other content */
+  font-size: 35px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 29%; /* Position the top edge of the element at the middle of the parent */
+  left: 49%; /* Position the left edge of the element at the middle of the parent */
+  transform: translate(-50%, -100%); /* Shift the element back by half its width and height to center it */
+
+}
+
+.front.hidden .uniqueNumber {
+  visibility: inherit;
+  opacity: inherit;
+  display: inherit;
+}
