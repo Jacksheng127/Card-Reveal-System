@@ -4,7 +4,7 @@ import SingleCard from './components/SingleCard'
 import Confetti from './components/Confetti';
 
 // Define the distribution of images
-const cardFronts = { "/img/1.png": 15, "/img/2.png": 15 };
+const cardFronts = { "/img/N1.png": 15, "/img/N2.png": 15 };
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -36,8 +36,8 @@ function App() {
     let cardNumber = 1;
     Object.entries(cardFronts).forEach(([src, count]) => {
       for (let i = 0; i < count; i++) {
-        let uniqueNumber = src === '/img/1.png' && uniqueNumbers1.length > 0 ? uniqueNumbers1.pop() :
-                         src === '/img/2.png' && uniqueNumbers2.length > 0 ? uniqueNumbers2.pop() : null;
+        let uniqueNumber = src === '/img/N1.png' && uniqueNumbers1.length > 0 ? uniqueNumbers1.pop() :
+                         src === '/img/N2.png' && uniqueNumbers2.length > 0 ? uniqueNumbers2.pop() : null;
         shuffledCards.push({ src, id: Math.random(), number: cardNumber++,  uniqueNumber: uniqueNumber });
       }
     });

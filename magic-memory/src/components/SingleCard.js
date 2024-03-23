@@ -42,7 +42,7 @@ export default function SingleCard({ card, setConfettiTriggered, handleCardClick
                 <div className="front">
                     <div className={`front ${!shown ? 'hidden' : ''}`}>
                     <img className='front' src={card.src} alt='card front'></img>
-                    <audio ref={audioRef} src="../img/cheer_fade.mp4"/>
+                    <audio ref={audioRef} src="../img/cheer_back_fade.mp4"/>
                     <div className='uniqueNumber'>{uniqueNumber}</div>
                     {/* {confettiTriggered && <Confetti />} */}
                     </div>
